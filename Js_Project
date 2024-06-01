@@ -1,0 +1,56 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+const nft_Detail =[]
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+
+
+function mintNFT (personId,fullName,gender,email,phoneno) {
+const NFT_val={
+  personId: personId,
+  fullName : fullName,
+  gender   : gender,
+  email  : email,
+  phoneno  : phoneno
+}
+nft_Detail.push(NFT_val);
+console.log("mint_Name:" + fullName );
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+for(let i=0;i<nft_Detail.length;i++)
+  {
+  console.log("\nper_Id \t\t\t:" + nft_Detail[i].personId);
+  console.log("per_name \t\t:" + nft_Detail[i].fullName);
+  console.log("per_gender \t\t:" + nft_Detail[i].gender);
+  console.log("per_email \t\t:" + nft_Detail[i].email);
+  console.log("per_phone-no \t:" + nft_Detail[i].phoneno);
+ }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+console.log(" \nNumber of NFT's are-:" + nft_Detail.length);
+}
+
+// call your functions below this line
+mintNFT(1,"Amit jaiswal","male","amit123@gmail.com",98373922);
+mintNFT(2,"Prem Prakash","male","prem123@gmail.com",98473922);
+mintNFT(3,"Shivangi Singh","female","shivi123@gmail.com",93373922);
+mintNFT(4,"Raj Jaiswal","male","raj123@gmail.com",98378922);
+mintNFT(5,"Simran Singh","female","sim123@gmail.com",98373972);
+mintNFT(6,"Aman Sharma","male","aman123@gmail.com",98373222);
+listNFTs();
+getTotalSupply();
